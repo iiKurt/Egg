@@ -15,7 +15,7 @@ BEGIN
 		BEGIN
 			VALUE "CompanyName", "Kurlabs"
 			VALUE "FileDescription", "An eggcellent application"
-			VALUE "FileVersion", "1.0"
+			VALUE "FileVersion", "0.5"
 			VALUE "InternalName", "Egg"
 			VALUE "LegalCopyright", "© 2021 Kurt. All rights reserved."
 			VALUE "OriginalFilename", "Egg.exe"
