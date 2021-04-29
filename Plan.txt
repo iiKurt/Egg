@@ -1,5 +1,7 @@
 TODOs:
 Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining two different info files
+Use Git Submodules to link to the SDL2 source code under /Libraries. https://stackoverflow.com/a/36554930
+Perhaps also use a similar method to link to the Windows and macOS builds of SDL2. We don't really need them under version control.
 
 Directory structure:
 Source:

@@ -1,3 +1,1 @@
 The SDL2 folder here is the source code, which can be built for an OS and put in an OS folder. (I think). Currently we are using the development library download from the SDL website and putting in the OS folder.
-
-TODO: Use Git Submodules to link to the SDL2 source code. https://stackoverflow.com/a/36554930
