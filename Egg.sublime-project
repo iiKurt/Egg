@@ -1,0 +1,35 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Current Project",
+			"working_dir": "${project_path:${folder}}",
+			"cmd": ["make"],
+			"variants":
+			[
+				{
+					"name": "Clean (macOS)",
+					"cmd": ["make", "-f", "macOS.mk", "clean"]
+				},
+				{
+					"name": "macOS",
+					"cmd": ["make", "-f", "macOS.mk"]
+				},
+				{
+					"name": "Clean (Windows)",
+					"cmd": ["make", "-f", "Windows.mk", "clean"]
+				},
+				{
+					"name": "Windows",
+					"cmd": ["make", "-f", "Windows.mk"]
+				}
+			]
+		}
+	]
+}

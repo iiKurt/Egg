@@ -1,0 +1,11 @@
+TODOs:
+Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining two different info files
+
+Directory structure:
+Source:
+	IO:
+		PSF
+		Texture
+		Resource
+	Graphics:
+		PSF

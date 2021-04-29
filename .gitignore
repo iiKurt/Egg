@@ -1,0 +1,3 @@
+# Project specific ignores
+Build/
+Egg.sublime-workspace

@@ -1,0 +1,30 @@
+#include "../Source/Resources.h"
+
+RESOURCE_ICON		ICON			RESOURCE_ICON_PATH
+RESOURCE_FONT		FILE_PSF		RESOURCE_FONT_PATH
+RESOURCE_HAPPYMAC	FILE_BITMAP		RESOURCE_HAPPYMAC_PATH
+RESOURCE_SADMAC		FILE_BITMAP		RESOURCE_SADMAC_PATH
+
+1 VERSIONINFO
+FILEVERSION		1,0,0,0
+PRODUCTVERSION	1,0,0,0
+BEGIN
+	BLOCK "StringFileInfo"
+	BEGIN
+		BLOCK "040904E4"
+		BEGIN
+			VALUE "CompanyName", "Kurlabs"
+			VALUE "FileDescription", "An eggcellent application"
+			VALUE "FileVersion", "1.0"
+			VALUE "InternalName", "Egg"
+			VALUE "LegalCopyright", "© 2021 Kurt. All rights reserved."
+			VALUE "OriginalFilename", "Egg.exe"
+			VALUE "ProductName", "Egg"
+			VALUE "ProductVersion", "1.0"
+		END
+	END
+	BLOCK "VarFileInfo"
+	BEGIN
+		VALUE "Translation", 0x409, 1252
+	END
+END

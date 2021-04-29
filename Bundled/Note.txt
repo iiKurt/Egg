@@ -1,0 +1,2 @@
+Only some things here are actually bundled/shipped.
+Everything in the resources folder is required for the program to run and will be bundled.
