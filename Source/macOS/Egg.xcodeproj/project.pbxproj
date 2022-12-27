@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		454BE38E295B97C300A1A8F3 /* happy-mac.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 454BE38C295B97C300A1A8F3 /* happy-mac.bmp */; };
+		454BE391295B9C8E00A1A8F3 /* happy-mac2x.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 454BE390295B9C8E00A1A8F3 /* happy-mac2x.bmp */; };
 		45810941283078C300C30843 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810940283078C300C30843 /* AppDelegate.m */; };
 		45810944283078C300C30843 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45810943283078C300C30843 /* ViewController.m */; };
 		45810946283078C400C30843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45810945283078C400C30843 /* Assets.xcassets */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		454BE38C295B97C300A1A8F3 /* happy-mac.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = "happy-mac.bmp"; path = "../Garmin/resources/images/happy-mac.bmp"; sourceTree = "<group>"; };
+		454BE390295B9C8E00A1A8F3 /* happy-mac2x.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; name = "happy-mac2x.bmp"; path = "../../happy-mac2x.bmp"; sourceTree = "<group>"; };
 		4581093C283078C300C30843 /* Egg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4581093F283078C300C30843 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45810940283078C300C30843 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		45810933283078C300C30843 = {
 			isa = PBXGroup;
 			children = (
+				454BE38C295B97C300A1A8F3 /* happy-mac.bmp */,
+				454BE390295B9C8E00A1A8F3 /* happy-mac2x.bmp */,
 				4581093E283078C300C30843 /* Egg */,
 				4581093D283078C300C30843 /* Products */,
 			);
@@ -127,6 +133,8 @@
 			files = (
 				45810946283078C400C30843 /* Assets.xcassets in Resources */,
 				45810949283078C400C30843 /* Main.storyboard in Resources */,
+				454BE391295B9C8E00A1A8F3 /* happy-mac2x.bmp in Resources */,
+				454BE38E295B97C300A1A8F3 /* happy-mac.bmp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +283,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
@@ -299,6 +308,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
