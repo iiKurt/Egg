@@ -1,0 +1,6 @@
+<layout id="AboutLayout">
+    <label id="about_header_label" x="center" y="start" text="@Strings.about_header" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label id="about_version_label" x="center" y="20%" text="@Strings.about_version" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label id="about_description_label" x="center" y="40%" text="@Strings.about_description" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+    <label id="about_website_label" x="center" y="80%" text="@Strings.about_website" font="Graphics.FONT_XTINY" color="Graphics.COLOR_WHITE" justification="Graphics.TEXT_JUSTIFY_CENTER" />
+</layout>

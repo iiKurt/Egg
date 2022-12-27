@@ -1,0 +1,4 @@
+<menu id="MainMenu">
+    <menu-item id="item_about" label="@Strings.menu_about_label" />
+    <menu-item id="item_back" label="@Strings.menu_back_label" />
+</menu>

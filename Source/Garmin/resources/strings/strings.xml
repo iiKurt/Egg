@@ -1,0 +1,11 @@
+<strings>
+    <string id="AppName">Egg</string>
+
+    <string id="menu_about_label">About</string>
+    <string id="menu_back_label">Back</string>
+
+    <string id="about_header">About Egg</string>
+    <string id="about_version">Version 0.6</string>
+    <string id="about_description">Copyright © 2019-2021\n Kurt. All rights reserved.</string>
+    <string id="about_website">https://kurtw.ink/</string>
+</strings>

@@ -1,0 +1,8 @@
+<resources>
+    <bitmap id="LauncherIcon" filename="images/egg-mac.bmp" />
+    
+    <font id="psf_font" filename="fonts/zap-light16.fnt" />
+
+    <bitmap id="happy_mac" filename="images/happy-mac.bmp" />
+    <bitmap id="sad_mac" filename="images/sad-mac.bmp" />
+</resources>
