@@ -17,6 +17,7 @@
 		4549F6AB295BB1030035F270 /* sad-mac.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4549F6A5295BB0E80035F270 /* sad-mac.bmp */; };
 		4549F6AC295BB1050035F270 /* zap-light16.psf in Resources */ = {isa = PBXBuildFile; fileRef = 4549F6A6295BB0E90035F270 /* zap-light16.psf */; };
 		4549F6CB295BE8DA0035F270 /* SDL_uikit_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4549F6CA295BE8DA0035F270 /* SDL_uikit_main.c */; };
+		4549F6E7295D4BBA0035F270 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4549F6E6295D4BBA0035F270 /* Settings.bundle */; };
 		459BB0EC295BA930000D815E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459BB0EB295BA930000D815E /* Assets.xcassets */; };
 		459BB0EF295BA930000D815E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 459BB0ED295BA930000D815E /* LaunchScreen.storyboard */; };
 		459BB11D295BAB25000D815E /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 459BB108295BA9D0000D815E /* SDL2.framework */; };
@@ -136,6 +137,7 @@
 		4549F6A6295BB0E90035F270 /* zap-light16.psf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "zap-light16.psf"; sourceTree = "<group>"; };
 		4549F6AD295BBDF40035F270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4549F6CA295BE8DA0035F270 /* SDL_uikit_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL_uikit_main.c; sourceTree = "<group>"; };
+		4549F6E6295D4BBA0035F270 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		459BB0D9295BA92F000D815E /* Egg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		459BB0EB295BA930000D815E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		459BB0EE295BA930000D815E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				4549F69B295BAF8D0035F270 /* zap-light16.psf */,
 				459BB0EB295BA930000D815E /* Assets.xcassets */,
 				459BB0ED295BA930000D815E /* LaunchScreen.storyboard */,
+				4549F6E6295D4BBA0035F270 /* Settings.bundle */,
 			);
 			path = Egg;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				459BB0EC295BA930000D815E /* Assets.xcassets in Resources */,
 				4549F6AA295BB1020035F270 /* happy-mac.bmp in Resources */,
 				4549F6AB295BB1030035F270 /* sad-mac.bmp in Resources */,
+				4549F6E7295D4BBA0035F270 /* Settings.bundle in Resources */,
 				4549F6AC295BB1050035F270 /* zap-light16.psf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
