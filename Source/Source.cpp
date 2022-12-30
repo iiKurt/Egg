@@ -102,7 +102,7 @@ static int resizeEventWatcher(void* data, SDL_Event* event) {
 	return 0;
 }
 
-int (int argc, char* argv[]) // int argc, char* args[]
+int main(int argc, char* argv[]) // int argc, char* args[]
 {
 	// Unused
 	(void)argc;

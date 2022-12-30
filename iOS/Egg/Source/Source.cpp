@@ -153,7 +153,7 @@ int main(int argc, char* argv[]) // int argc, char* args[]
                 float widthScale = (float)rw / (float) SCREEN_WIDTH;
                 float heightScale = (float)rh / (float) SCREEN_HEIGHT;
 
-                if(widthScale != heightScale) {
+                if (widthScale != heightScale) {
                     fprintf(stderr, "WARNING: width scale != height scale\n");
                 }
 
