@@ -6,8 +6,7 @@ CXX				:= x86_64-w64-mingw32-g++
 
 # We be building for x64 because screw 32-bit systems!
 # this variable isn't really needed, only because LDFLAGS splits the framework path into directory and file...
-LIBRARIESDIR	:= $(LIBRARIESDIR)/Windows
-SDL2DIR			:= $(LIBRARIESDIR)/SDL/x86_64-w64-mingw32
+SDL2DIR			:= $(LIBRARIESDIR)/SDL2-devel-2.26.1-mingw/x86_64-w64-mingw32
 
 # Extend the makefile.variables
 CXXFLAGS		+= -I $(SDL2DIR)/include/SDL2

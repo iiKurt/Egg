@@ -1,3 +1,7 @@
 # Project specific ignores
 Build/
+Libraries/SDL2-devel-2.26.1-mingw/
 Egg.sublime-workspace
+
+## Xcode User settings
+xcuserdata/

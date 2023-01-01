@@ -19,7 +19,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019-2023 Kurt. All rights reserved. http://kurtw.ink/</string>
+	<string>Copyright © 2019-2023 Kurt. All rights reserved. https://kurtw.ink/</string>
 	<key>MinimumOSVersion</key>
 	<string>16.0</string>
 	<key>UIUserInterfaceStyle</key>
@@ -62,12 +62,8 @@
 			</array>
 		</dict>
 	</dict>
-	<key>CFBundleSupportedPlatforms</key>
-	<array>
-		<string>MacOSX</string>
-	</array>
 	<key>LSRequiresIPhoneOS</key>
-	<true/>
+	<false/>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

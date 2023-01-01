@@ -3,13 +3,13 @@ ABSCURDIR		:= $(strip $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST)))))
 UNAME			:= $(shell uname)
 
 # for objects and exe output
-BUILDDIR		:= Build
+BUILDDIR		:= ../Build
 # object file generation path (don't distribute this)
-WORKINGDIR		= $(BUILDDIR)/Working
+WORKINGDIR		= $(BUILDDIR)/Objects
 # modules path
-SOURCEDIR		:= Source
-LIBRARIESDIR	:= Libraries
-BUNDLEDDIR		:= Bundled
+SOURCEDIR		:= ../Source
+LIBRARIESDIR	:= ../Libraries
+BUNDLEDDIR		:= ../Bundled
 RESOURCESDIR	:= $(BUNDLEDDIR)/Resources
 
 # executables
@@ -25,8 +25,5 @@ LDFLAGS			:=
 # TODO: specify source files then patsubst to find object files
 OBJECTS			:= \
 	Source.o \
-	DrawPSF.o \
 	LoadTexture.o \
-	Font/LoadPSF.o \
-	Resource.o \
-	File.o
+	BMPF.o

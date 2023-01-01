@@ -1,4 +1,6 @@
-#include <SDL2/SDL.h>
+#pragma once
+
+#include <SDL.h>
 
 void BMPF_initalise(SDL_Texture* font);
 void BMPF_kill(void);

@@ -1,6 +1,8 @@
 #include <SDL.h>
 #include <string>
 
+#include "Resources.h"
+#include "LoadTexture.hpp"
 #include "BMPF.hpp"
 
 // Screen dimension constants (640 * 480)
@@ -54,6 +56,24 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 
 			// Create a hardware accelerated renderer
 			renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
+			
+//			if (renderer == NULL) {
+//				// Error creating renderer, try a software one instead
+//				renderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
+//				// SDL_UpdateWindowSurface(window); is needed to draw, rather than SDL_RenderPresent();
+				
+				// Still an error? Give up
+				if (renderer == NULL) {
+					SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Renderer could not be created. SDL Error: %s", SDL_GetError());
+					SDL_ShowSimpleMessageBox(
+						SDL_MESSAGEBOX_ERROR,
+						"Renderer error",
+						"Renderer could not be created.",
+						window);
+					quit();
+					return -1;
+				}
+//			}
             
             // https://discourse.libsdl.org/t/high-dpi-mode/34411/2
             int rendererWidth = 0, rendererHeight = 0;
@@ -77,47 +97,24 @@ int main(int argc, char* argv[]) // int argc, char* args[]
             }
 
 			SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Successfully loaded"); // Shorthand: SDL_Log("whatever");
-			
-			// Set color
-			SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-			// Fill screen with color
-			SDL_RenderClear(renderer);
 		}
 	}
 	
 	// Set up font
-	const char* fontPath = "zap-light16.bmp";
-	SDL_Surface* bmpSurface = SDL_LoadBMP(fontPath);
-	SDL_Texture* bmpTexture;
-	if (bmpSurface == NULL)
+	SDL_Texture* bmpTexture = LoadTexture(renderer, RESOURCE_FONT);
+	if (bmpTexture == NULL)
 	{
 		// Unable to load as a BMP
-		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "File load error: %s Filename: %s", SDL_GetError(), fontPath);
-		SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "File load error: %s", SDL_GetError());
+		SDL_ShowSimpleMessageBox(
+			SDL_MESSAGEBOX_ERROR,
 			"File load error",
-			(std::string() + "Filename: " + fontPath).c_str(),
+			"Unable to load file.",
 			window);
 		quit();
 		return -1;
 	}
-	else
-	{
-		// Create texture from surface pixels
-		bmpTexture = SDL_CreateTextureFromSurface(renderer, bmpSurface);
-		if (bmpTexture == NULL)
-		{
-			// Unable to create texture from the surface
-			SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "File load error: %s Filename: %s", SDL_GetError(), fontPath);
-			quit();
-			return -1;
-		}
-
-		// Get rid of old loaded surface
-		SDL_FreeSurface(bmpSurface);
-	}
 	BMPF_initalise(bmpTexture); // Use bitmap font
-	
-	SDL_SetRenderDrawColor(renderer, 255, 255, 0, 255);
 	
 	SDL_Event event;
 	bool running = true;
