@@ -9,11 +9,10 @@
 /* Begin PBXBuildFile section */
 		4500C47329612B5B0060B4D7 /* SDL_uikit_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4500C47229612B5B0060B4D7 /* SDL_uikit_main.c */; };
 		4500C47529612B660060B4D7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4500C47429612B660060B4D7 /* Settings.bundle */; platformFilter = ios; };
-		4500C47629612EF80060B4D7 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; };
-		4500C47729612EF80060B4D7 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		4500C47829612F020060B4D7 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; };
-		450ACC2B2961227C0031BFEB /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; platformFilter = ios; };
-		450ACC2C2961227C0031BFEB /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		451A72D12961405F002244C0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; platformFilter = ios; };
+		451A72D22961405F002244C0 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		451A72D429614080002244C0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; platformFilters = (macos, ); };
+		451A72D529614080002244C0 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; platformFilters = (macos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4549F7102960FF7B0035F270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4549F70F2960FF7B0035F270 /* Assets.xcassets */; };
 		4549F7132960FF7B0035F270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7112960FF7B0035F270 /* LaunchScreen.storyboard */; platformFilter = ios; };
 		4549F78F296104660035F270 /* DrawPSF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F782296104660035F270 /* DrawPSF.cpp */; };
@@ -110,14 +109,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4549F767296100910035F270 /* Embed Frameworks */ = {
+		451A72D32961405F002244C0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				450ACC2C2961227C0031BFEB /* SDL2.framework in Embed Frameworks */,
-				4500C47729612EF80060B4D7 /* SDL2.framework in Embed Frameworks */,
+				451A72D22961405F002244C0 /* SDL2.framework in Embed Frameworks */,
+				451A72D529614080002244C0 /* SDL2.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,9 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4500C47829612F020060B4D7 /* SDL2.framework in Frameworks */,
-				450ACC2B2961227C0031BFEB /* SDL2.framework in Frameworks */,
-				4500C47629612EF80060B4D7 /* SDL2.framework in Frameworks */,
+				451A72D12961405F002244C0 /* SDL2.framework in Frameworks */,
+				451A72D429614080002244C0 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +271,7 @@
 				4549F6F92960FF790035F270 /* Sources */,
 				4549F6FA2960FF790035F270 /* Frameworks */,
 				4549F6FB2960FF790035F270 /* Resources */,
-				4549F767296100910035F270 /* Embed Frameworks */,
+				451A72D32961405F002244C0 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -500,6 +498,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -552,6 +551,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -579,6 +579,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
@@ -611,6 +612,7 @@
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
+					"@executable_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
