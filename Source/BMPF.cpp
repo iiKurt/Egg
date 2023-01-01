@@ -1,5 +1,3 @@
-#include <SDL.h>
-
 #include "BMPF.hpp"
 
 #define CHARACTERS_PER_ROW    16
@@ -7,6 +5,9 @@
 
 static SDL_Texture* selectedFont = NULL;
 static Uint16 selectedFontWidth, selectedFontHeight;
+
+static SDL_Rect s_rect;
+static SDL_Rect d_rect;
 
 void BMPF_initalise(SDL_Texture* font)
 {
@@ -19,6 +20,11 @@ void BMPF_initalise(SDL_Texture* font)
 	selectedFont = font;
 	selectedFontWidth = w;
 	selectedFontHeight = h;
+	
+	s_rect.w = selectedFontWidth / CHARACTERS_PER_ROW;
+	s_rect.h = selectedFontHeight / CHARACTERS_PER_COLUMN;
+	d_rect.w = s_rect.w;
+	d_rect.h = s_rect.h;
 }
 
 void BMPF_kill(void) {
@@ -44,7 +50,7 @@ void BMPF_setColor(Uint32 fore, Uint32 unused) /* Color must be in 0x00RRGGBB fo
 	SDL_SetTextureColorMod(selectedFont, pal[0].r, pal[0].g, pal[0].b);
 }
 
-void BMPF_print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, bool alignCenter)
+void BMPF_Print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, bool alignCenter)
 {
 	BMPF_setColorFromSDL(renderer);
 	
@@ -66,22 +72,12 @@ void BMPF_print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, boo
 	int breakWordIndex = -1;
 	
 	// Set up stuff
-	SDL_Rect s_rect;
-	SDL_Rect d_rect;
-
-	d_rect.x = x;
-	d_rect.y = y;
-	s_rect.w = selectedFontWidth / CHARACTERS_PER_ROW;
-	s_rect.h = selectedFontHeight / CHARACTERS_PER_COLUMN;
-	d_rect.w = s_rect.w;
-	d_rect.h = s_rect.h;
+	int positionX = x;
+	int positionY = y;
 
 	// Draw each character, incrementing the pointer until it points to null
 	for (int i = 0; str[i] != '\0'; i++)
 	{
-		// Get character ASCII code
-		int id = (int)str[i];
-		
 		// First line or
 		// Designated line break or
 		// Just passed an... unexpected newline
@@ -139,41 +135,54 @@ void BMPF_print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, boo
 				}
 				
 				// Reset to the left side
-				d_rect.x = centeredX;
+				positionX = centeredX;
 			}
 			else {
 				// Reset to the left side
-				d_rect.x = x;
+				positionX = x;
 			}
 			
 			// Not the first line
 			if (i != 0) {
 				// Advance to the next line
-				d_rect.y += s_rect.h;
+				positionY += s_rect.h;
 			}
 		}
+		
+		// Get character ASCII code
+		int id = (int)str[i];
 		
 		// Ensure the character isn't a newline character
 		// And that it will actually be drawn on screen
 		if (str[i] != '\n') {
-			// Grab character from bitmap font
-			#if (CHARACTERS_PER_COLUMN != 1)
-			// Get row and column coordinates
-			int row = id / CHARACTERS_PER_ROW;
-			int col = id % CHARACTERS_PER_ROW;
-			// Convert to pixel values
-			s_rect.x = col * s_rect.w;
-			s_rect.y = row * s_rect.h;
-			#else
-			s_rect.x = id * s_rect.w;
-			s_rect.y = 0;
-			#endif
-			
-			// Copy the character to the screen
-			SDL_RenderCopy(renderer, selectedFont, &s_rect, &d_rect);
+			BMPF_Print(renderer, str[i], positionX, positionY);
 			
 			// Advance the cursor to the left
-			d_rect.x += s_rect.w;
+			positionX += s_rect.w;
 		}
 	}
+}
+
+void BMPF_Print(SDL_Renderer* renderer, char character, Uint32 x, Uint32 y) {
+	d_rect.x = x;
+	d_rect.y = y;
+	
+	// Get character ASCII code
+	int id = (int)character;
+	
+	// Grab character from bitmap font
+	#if (CHARACTERS_PER_COLUMN != 1)
+	// Get row and column coordinates
+	int row = id / CHARACTERS_PER_ROW;
+	int col = id % CHARACTERS_PER_ROW;
+	// Convert to pixel values
+	s_rect.x = col * s_rect.w;
+	s_rect.y = row * s_rect.h;
+	#else
+	s_rect.x = id * s_rect.w;
+	s_rect.y = 0;
+	#endif
+
+	// Copy the character to the screen
+	SDL_RenderCopy(renderer, selectedFont, &s_rect, &d_rect);
 }
