@@ -12,7 +12,7 @@
 			<key>Title</key>
 			<string></string>
 			<key>FooterText</key>
-			<string>Copyright © 2019-2022 Kurt. All rights reserved.
+			<string>Copyright © 2019-2023 Kurt. All rights reserved.
 https://kurtw.ink/</string>
 		</dict>
 		<dict>
@@ -23,7 +23,7 @@ https://kurtw.ink/</string>
 			<key>Key</key>
 			<string>version_preference</string>
 			<key>DefaultValue</key>
-			<string>1.0</string>
+			<string>0.6.0</string>
 		</dict>
 		<dict>
 			<key>Type</key>

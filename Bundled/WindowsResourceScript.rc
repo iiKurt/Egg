@@ -6,21 +6,21 @@ RESOURCE_HAPPYMAC	FILE_BITMAP		RESOURCE_HAPPYMAC_PATH
 RESOURCE_SADMAC		FILE_BITMAP		RESOURCE_SADMAC_PATH
 
 1 VERSIONINFO
-FILEVERSION		1,0,0,0
-PRODUCTVERSION	1,0,0,0
+FILEVERSION		0,6,0,0
+PRODUCTVERSION		0,6,0,0
 BEGIN
 	BLOCK "StringFileInfo"
 	BEGIN
 		BLOCK "040904E4"
 		BEGIN
-			VALUE "CompanyName", "Kurlabs"
-			VALUE "FileDescription", "An eggcellent application"
-			VALUE "FileVersion", "0.5"
+			VALUE "CompanyName", "kurtwink"
+			VALUE "FileDescription", "http://kurtw.ink/"
+			VALUE "FileVersion", "0.6.0"
 			VALUE "InternalName", "Egg"
-			VALUE "LegalCopyright", "© 2021 Kurt. All rights reserved."
+			VALUE "LegalCopyright", "Copyright © 2019-2023 Kurt. All rights reserved."
 			VALUE "OriginalFilename", "Egg.exe"
 			VALUE "ProductName", "Egg"
-			VALUE "ProductVersion", "1.0"
+			VALUE "ProductVersion", "0.6.0"
 		END
 	END
 	BLOCK "VarFileInfo"
