@@ -12,13 +12,10 @@
 #undef main
 #endif
 
-int
-main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     return SDL_UIKitRunApp(argc, argv, SDL_main);
 }
 #endif /* !SDL_MAIN_HANDLED */
 
 #endif /* __IPHONEOS__ || __TVOS__ */
-
-/* vi: set ts=4 sw=4 expandtab: */

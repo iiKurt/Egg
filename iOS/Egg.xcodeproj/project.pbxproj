@@ -1,0 +1,638 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4500C47329612B5B0060B4D7 /* SDL_uikit_main.c in Sources */ = {isa = PBXBuildFile; fileRef = 4500C47229612B5B0060B4D7 /* SDL_uikit_main.c */; };
+		4500C47529612B660060B4D7 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4500C47429612B660060B4D7 /* Settings.bundle */; };
+		450ACC2B2961227C0031BFEB /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; };
+		450ACC2C2961227C0031BFEB /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4549F7102960FF7B0035F270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4549F70F2960FF7B0035F270 /* Assets.xcassets */; };
+		4549F7132960FF7B0035F270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7112960FF7B0035F270 /* LaunchScreen.storyboard */; };
+		4549F78F296104660035F270 /* DrawPSF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F782296104660035F270 /* DrawPSF.cpp */; };
+		4549F790296104660035F270 /* File.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F784296104660035F270 /* File.cpp */; };
+		4549F791296104660035F270 /* LoadPSF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F787296104660035F270 /* LoadPSF.cpp */; };
+		4549F792296104660035F270 /* LoadTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F789296104660035F270 /* LoadTexture.cpp */; };
+		4549F793296104660035F270 /* Resource.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F78B296104660035F270 /* Resource.cpp */; };
+		4549F794296104660035F270 /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F78E296104660035F270 /* Source.cpp */; };
+		4549F7B02961115D0035F270 /* BMPF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4549F7AF2961115D0035F270 /* BMPF.cpp */; };
+		4549F7D129611C830035F270 /* egg-mac.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7CD29611C830035F270 /* egg-mac.bmp */; };
+		4549F7D229611C830035F270 /* happy-mac.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7CE29611C830035F270 /* happy-mac.bmp */; };
+		4549F7D329611C830035F270 /* sad-mac.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7CF29611C830035F270 /* sad-mac.bmp */; };
+		4549F7D429611C830035F270 /* zap-light16.bmp in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7D029611C830035F270 /* zap-light16.bmp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		450ACC142961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872;
+			remoteInfo = Framework;
+		};
+		450ACC162961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7D88B5423E2437C00DCD162;
+			remoteInfo = "Framework-iOS";
+		};
+		450ACC182961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7D88D1523E24BED00DCD162;
+			remoteInfo = "Framework-tvOS";
+		};
+		450ACC1A2961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E2D187CF28A5673500D2B4F1;
+			remoteInfo = "xcFramework-iOS";
+		};
+		450ACC1C2961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6B30761BA81005FE872;
+			remoteInfo = "Static Library";
+		};
+		450ACC1E2961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A7D88E5423E24D3B00DCD162;
+			remoteInfo = "Static Library-iOS";
+		};
+		450ACC202961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A769B23D23E259AE00872273;
+			remoteInfo = "Static Library-tvOS";
+		};
+		450ACC222961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DB31407717554B71006C0E22;
+			remoteInfo = "Shared Library";
+		};
+		450ACC242961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A75FCEB323E25AB700529352;
+			remoteInfo = "Shared Library-iOS";
+		};
+		450ACC262961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A75FD06C23E25AC700529352;
+			remoteInfo = "Shared Library-tvOS";
+		};
+		450ACC282961223D0031BFEB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
+			remoteInfo = "Standard DMG";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4549F767296100910035F270 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				450ACC2C2961227C0031BFEB /* SDL2.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		4500C47229612B5B0060B4D7 /* SDL_uikit_main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SDL_uikit_main.c; sourceTree = "<group>"; };
+		4500C47429612B660060B4D7 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		4549F6FD2960FF790035F270 /* Egg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4549F70F2960FF7B0035F270 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4549F7122960FF7B0035F270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4549F73F2961002A0035F270 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../Libraries/SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		4549F782296104660035F270 /* DrawPSF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DrawPSF.cpp; sourceTree = "<group>"; };
+		4549F783296104660035F270 /* DrawPSF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = DrawPSF.hpp; sourceTree = "<group>"; };
+		4549F784296104660035F270 /* File.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = File.cpp; sourceTree = "<group>"; };
+		4549F785296104660035F270 /* File.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = File.hpp; sourceTree = "<group>"; };
+		4549F787296104660035F270 /* LoadPSF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadPSF.cpp; sourceTree = "<group>"; };
+		4549F788296104660035F270 /* LoadPSF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LoadPSF.hpp; sourceTree = "<group>"; };
+		4549F789296104660035F270 /* LoadTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LoadTexture.cpp; sourceTree = "<group>"; };
+		4549F78A296104660035F270 /* LoadTexture.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LoadTexture.hpp; sourceTree = "<group>"; };
+		4549F78B296104660035F270 /* Resource.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Resource.cpp; sourceTree = "<group>"; };
+		4549F78C296104660035F270 /* Resource.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Resource.hpp; sourceTree = "<group>"; };
+		4549F78D296104660035F270 /* Resources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
+		4549F78E296104660035F270 /* Source.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Source.cpp; sourceTree = "<group>"; };
+		4549F7A32961115D0035F270 /* BMPF.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BMPF.hpp; sourceTree = "<group>"; };
+		4549F7AF2961115D0035F270 /* BMPF.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BMPF.cpp; sourceTree = "<group>"; };
+		4549F7CD29611C830035F270 /* egg-mac.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "egg-mac.bmp"; sourceTree = "<group>"; };
+		4549F7CE29611C830035F270 /* happy-mac.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "happy-mac.bmp"; sourceTree = "<group>"; };
+		4549F7CF29611C830035F270 /* sad-mac.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "sad-mac.bmp"; sourceTree = "<group>"; };
+		4549F7D029611C830035F270 /* zap-light16.bmp */ = {isa = PBXFileReference; lastKnownFileType = image.bmp; path = "zap-light16.bmp"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4549F6FA2960FF790035F270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				450ACC2B2961227C0031BFEB /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		450ACC072961223D0031BFEB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				450ACC152961223D0031BFEB /* SDL2.framework */,
+				450ACC172961223D0031BFEB /* SDL2.framework */,
+				450ACC192961223D0031BFEB /* SDL2.framework */,
+				450ACC1B2961223D0031BFEB /* SDL2.framework */,
+				450ACC1D2961223D0031BFEB /* libSDL2.a */,
+				450ACC1F2961223D0031BFEB /* libSDL2.a */,
+				450ACC212961223D0031BFEB /* libSDL2.a */,
+				450ACC232961223D0031BFEB /* libSDL2.dylib */,
+				450ACC252961223D0031BFEB /* libSDL2.dylib */,
+				450ACC272961223D0031BFEB /* libSDL2.dylib */,
+				450ACC292961223D0031BFEB /* SDL2 */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4549F6F42960FF790035F270 = {
+			isa = PBXGroup;
+			children = (
+				4549F73F2961002A0035F270 /* SDL.xcodeproj */,
+				4549F6FF2960FF790035F270 /* Egg */,
+				4549F6FE2960FF790035F270 /* Products */,
+				4549F763296100840035F270 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4549F6FE2960FF790035F270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4549F6FD2960FF790035F270 /* Egg.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4549F6FF2960FF790035F270 /* Egg */ = {
+			isa = PBXGroup;
+			children = (
+				4500C47229612B5B0060B4D7 /* SDL_uikit_main.c */,
+				4549F781296104660035F270 /* Source */,
+				4549F7CC29611C830035F270 /* Resources */,
+				4549F70F2960FF7B0035F270 /* Assets.xcassets */,
+				4549F7112960FF7B0035F270 /* LaunchScreen.storyboard */,
+				4500C47429612B660060B4D7 /* Settings.bundle */,
+			);
+			path = Egg;
+			sourceTree = "<group>";
+		};
+		4549F763296100840035F270 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4549F781296104660035F270 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4549F786296104660035F270 /* Font */,
+				4549F782296104660035F270 /* DrawPSF.cpp */,
+				4549F783296104660035F270 /* DrawPSF.hpp */,
+				4549F784296104660035F270 /* File.cpp */,
+				4549F785296104660035F270 /* File.hpp */,
+				4549F789296104660035F270 /* LoadTexture.cpp */,
+				4549F78A296104660035F270 /* LoadTexture.hpp */,
+				4549F78B296104660035F270 /* Resource.cpp */,
+				4549F78C296104660035F270 /* Resource.hpp */,
+				4549F78D296104660035F270 /* Resources.h */,
+				4549F78E296104660035F270 /* Source.cpp */,
+				4549F7AF2961115D0035F270 /* BMPF.cpp */,
+				4549F7A32961115D0035F270 /* BMPF.hpp */,
+			);
+			name = Source;
+			path = ../../Source;
+			sourceTree = "<group>";
+		};
+		4549F786296104660035F270 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4549F787296104660035F270 /* LoadPSF.cpp */,
+				4549F788296104660035F270 /* LoadPSF.hpp */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4549F7CC29611C830035F270 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4549F7CD29611C830035F270 /* egg-mac.bmp */,
+				4549F7CE29611C830035F270 /* happy-mac.bmp */,
+				4549F7CF29611C830035F270 /* sad-mac.bmp */,
+				4549F7D029611C830035F270 /* zap-light16.bmp */,
+			);
+			name = Resources;
+			path = ../../Bundled/Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4549F6FC2960FF790035F270 /* Egg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4549F7182960FF7B0035F270 /* Build configuration list for PBXNativeTarget "Egg" */;
+			buildPhases = (
+				4549F6F92960FF790035F270 /* Sources */,
+				4549F6FA2960FF790035F270 /* Frameworks */,
+				4549F6FB2960FF790035F270 /* Resources */,
+				4549F767296100910035F270 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Egg;
+			productName = Egg;
+			productReference = 4549F6FD2960FF790035F270 /* Egg.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4549F6F52960FF790035F270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					4549F6FC2960FF790035F270 = {
+						CreatedOnToolsVersion = 14.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 4549F6F82960FF790035F270 /* Build configuration list for PBXProject "Egg" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4549F6F42960FF790035F270;
+			productRefGroup = 4549F6FE2960FF790035F270 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 450ACC072961223D0031BFEB /* Products */;
+					ProjectRef = 4549F73F2961002A0035F270 /* SDL.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				4549F6FC2960FF790035F270 /* Egg */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		450ACC152961223D0031BFEB /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = 450ACC142961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC172961223D0031BFEB /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = 450ACC162961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC192961223D0031BFEB /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = 450ACC182961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC1B2961223D0031BFEB /* SDL2.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL2.framework;
+			remoteRef = 450ACC1A2961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC1D2961223D0031BFEB /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = 450ACC1C2961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC1F2961223D0031BFEB /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = 450ACC1E2961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC212961223D0031BFEB /* libSDL2.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL2.a;
+			remoteRef = 450ACC202961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC232961223D0031BFEB /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libSDL2.dylib;
+			remoteRef = 450ACC222961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC252961223D0031BFEB /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libSDL2.dylib;
+			remoteRef = 450ACC242961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC272961223D0031BFEB /* libSDL2.dylib */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.dylib";
+			path = libSDL2.dylib;
+			remoteRef = 450ACC262961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		450ACC292961223D0031BFEB /* SDL2 */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = SDL2;
+			remoteRef = 450ACC282961223D0031BFEB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4549F6FB2960FF790035F270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4549F7132960FF7B0035F270 /* LaunchScreen.storyboard in Resources */,
+				4549F7D429611C830035F270 /* zap-light16.bmp in Resources */,
+				4549F7102960FF7B0035F270 /* Assets.xcassets in Resources */,
+				4549F7D229611C830035F270 /* happy-mac.bmp in Resources */,
+				4549F7D129611C830035F270 /* egg-mac.bmp in Resources */,
+				4549F7D329611C830035F270 /* sad-mac.bmp in Resources */,
+				4500C47529612B660060B4D7 /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4549F6F92960FF790035F270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4549F790296104660035F270 /* File.cpp in Sources */,
+				4549F793296104660035F270 /* Resource.cpp in Sources */,
+				4549F791296104660035F270 /* LoadPSF.cpp in Sources */,
+				4500C47329612B5B0060B4D7 /* SDL_uikit_main.c in Sources */,
+				4549F7B02961115D0035F270 /* BMPF.cpp in Sources */,
+				4549F794296104660035F270 /* Source.cpp in Sources */,
+				4549F792296104660035F270 /* LoadTexture.cpp in Sources */,
+				4549F78F296104660035F270 /* DrawPSF.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4549F7112960FF7B0035F270 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4549F7122960FF7B0035F270 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4549F7162960FF7B0035F270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4549F7172960FF7B0035F270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4549F7192960FF7B0035F270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NFW2U638MT;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/SDL/include\"";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4549F71A2960FF7B0035F270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NFW2U638MT;
+				GENERATE_INFOPLIST_FILE = YES;
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../Libraries/SDL/include\"";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = metal;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Dark;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4549F6F82960FF790035F270 /* Build configuration list for PBXProject "Egg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4549F7162960FF7B0035F270 /* Debug */,
+				4549F7172960FF7B0035F270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4549F7182960FF7B0035F270 /* Build configuration list for PBXNativeTarget "Egg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4549F7192960FF7B0035F270 /* Debug */,
+				4549F71A2960FF7B0035F270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4549F6F52960FF790035F270 /* Project object */;
+}
