@@ -1,13 +1,12 @@
 #include <SDL.h>
-#include <string>
 
 #include "Resources.h"
 #include "LoadTexture.hpp"
 #include "BMPF.hpp"
-//#include "Game.hpp"
+#include "Game.hpp"
 
 // Screen dimension constants (640 * 480)
-int SCREEN_WIDTH = 410;
+int SCREEN_WIDTH = 420;
 int SCREEN_HEIGHT = 240;
 
 // The window we'll be rendering to
@@ -15,7 +14,18 @@ SDL_Window* window = NULL;
 // The surface contained by the window
 SDL_Renderer* renderer = NULL;
 
-//void render();
+// Resources
+SDL_Texture* happyMac;
+SDL_Texture* sadMac;
+
+// Game state
+Game_State* gameState;
+SDL_TimerID ticker;
+
+// Function prototypes
+Uint32 tickerCallback(Uint32 interval, void* param);
+void update();
+void render();
 void quit();
 
 int main(int argc, char* argv[]) // int argc, char* args[]
@@ -104,7 +114,11 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 	
 	// Set up font
 	SDL_Texture* bmpTexture = LoadTexture(renderer, RESOURCE_FONT);
-	if (bmpTexture == NULL)
+	happyMac = LoadTexture(renderer, RESOURCE_HAPPYMAC);
+	sadMac = LoadTexture(renderer, RESOURCE_SADMAC);
+	if (bmpTexture == NULL ||
+		happyMac == NULL ||
+		sadMac == NULL)
 	{
 		// Unable to load as a BMP
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "File load error: %s", SDL_GetError());
@@ -116,46 +130,123 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 		quit();
 		return -1;
 	}
-	BMPF_initalise(bmpTexture); // Use bitmap font
+	BMPF_Initalise(bmpTexture); // Use bitmap font
+	
+	Game_Initalise();
+	gameState = Game_GetState();
+	
+	ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+	// Render now so we don't have to wait for any events
+	render();
 	
 	SDL_Event event;
 	bool running = true;
 	while (running && SDL_WaitEvent(&event))
 	{
-		// Clear the screen
-		// The backbuffer should be considered invalidated after each present;
-		// do not assume that previous contents will exist between frames.
-
-		// Set background color to black
-		SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-		// Fill screen with color
-		SDL_RenderClear(renderer);
-		
-		// Set foreground color to red
-		SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-		BMPF_Print(renderer, "Testing", 100, 200, false);
-		
-		//render();
-		
-		if (event.type == SDL_QUIT) {
-			running = false;
-			break;
+		switch (event.type) {
+			case SDL_QUIT:
+				running = false;
+				break;
+			case SDL_FINGERDOWN:
+			case SDL_MOUSEBUTTONDOWN:
+			case SDL_KEYDOWN:
+				if (event.key.repeat != 0) {
+					break;
+				}
+				
+				if (Game_Submit()) {
+					SDL_RemoveTimer(ticker);
+					update();
+					render();
+					ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+				}
+				else {
+					render();
+				}
+				break;
+			case SDL_WINDOWEVENT:
+				if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
+					// Update screen size variables when window size has changed
+					
+					#if defined(__IPHONEOS__) || defined(__ANDROID__)
+					SDL_DisplayMode dm;
+					SDL_GetCurrentDisplayMode(0, &dm);
+					
+					SCREEN_HEIGHT = dm.h;
+					SCREEN_WIDTH = dm.w;
+					#else
+					SDL_GetRendererOutputSize(renderer, &SCREEN_WIDTH, &SCREEN_HEIGHT);
+					#endif
+					
+					render();
+				}
+				break;
+				
+			default:
+				break;
 		}
-		
-		// Draw any pending data to the screen
-		SDL_RenderPresent(renderer);
 	}
 
 	return 0;
 }
-/*
-void render() {
-	SDL_DisplayMode dm;
-	SDL_GetCurrentDisplayMode(0, &dm);
 
-	SCREEN_HEIGHT = dm.h;
-	SCREEN_WIDTH = dm.w;
+Uint32 tickerCallback(Uint32 interval, void* param) {
+	// Unused
+	(void)interval;
+	(void)param;
 	
+	SDL_RemoveTimer(ticker);
+	ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+	
+	update();
+	render();
+	return 0;
+}
+
+void update() {
+	Game_Update();
+	if (gameState->Complete) {
+		SDL_RemoveTimer(ticker);
+	}
+}
+
+void render() {
+	// Clear the screen
+	// The backbuffer should be considered invalidated after each present;
+	// do not assume that previous contents will exist between frames.
+	
+	// Set background color to black
+	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
+	// Fill screen with color
+	SDL_RenderClear(renderer);
+	
+	// Turorial text
+	if (gameState->Tutorial) {
+		BMPF_SetColor(0, 192, 224);
+		BMPF_Print(renderer, TutorialText, (SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) - 100, true);
+	}
+	
+	// Draw Mac (26 * 29 image)
+	SDL_Rect SrcR = { 0, 0, 26, 29 };
+	SDL_Rect DestR = { 0, 0, 26, 29 };
+	
+	DestR.x = (SCREEN_WIDTH / 2) - (26 / 2);
+	DestR.y = (SCREEN_HEIGHT / 2) - ((29 / 2) * 3);
+	
+	// Happy Mac
+	if (gameState->Complete) {
+		SDL_RenderCopy(renderer, happyMac, &SrcR, &DestR);
+	}
+	// Sad Mac
+	else {
+		SDL_RenderCopy(renderer, sadMac, &SrcR, &DestR);
+	}
+	
+	// Set foreground color to white
+	BMPF_SetColor(255, 255, 255);
+	SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+	
+	// Draw error codes
 	for (short i = 0; i < GameArrayLength; i++) { // For each column
 		int x; // https://stackoverflow.com/a/8735780
 		int y;
@@ -177,16 +268,30 @@ void render() {
 				x += 2;
 			}
 
-			BMPF_Print(renderer, Game_GetHexCharacter(GameArray[j][i]), x, y);
+			BMPF_Print(renderer, Game_GetHexCharacter(gameState->Array[j][i]), x, y);
 		}
 
-		if (GameCurrentIndex == i) {
+		if (gameState->CurrentIndex == i) {
 			SDL_RenderDrawLine(renderer, x, y + 14, x + 7, y + 14);
 		}
 	}
+	
+	// Easter egg stuff
+	if (gameState->Complete) {
+		// Easter egg text
+		BMPF_SetColor(0, 192, 224);
+		BMPF_Print(renderer, Game_GetEggText(), (SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2) - 100, true);
+		
+		// Counter
+	}
+	
+	// Draw any pending data to the screen
+	SDL_RenderPresent(renderer);
 }
-*/
+
 void quit() {
+	BMPF_Kill();
+	
 	// Destory renderer
 	SDL_DestroyRenderer(renderer);
 

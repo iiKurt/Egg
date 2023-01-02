@@ -1,13 +1,9 @@
 TODOs:
-Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining two different info files
-Use Git Submodules to link to the SDL2 source code under /Libraries. https://stackoverflow.com/a/36554930
-Perhaps also use a similar method to link to the Windows and macOS builds of SDL2. We don't really need them under version control.
-
-Directory structure:
-Source:
-	IO:
-		PSF
-		Texture
-		Resource
-	Graphics:
-		PSF
+- Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining different info files
+- Other TODOs in the code
+- Sync up BMPF with repo
+- Figure out what can/should be written in C vs C++
+- Version parity with watch edition, easter egg text color, some strings, acknowledgement counter
+	- and with Classic SDL version, green text when completed etc
+- Incorporate EggMac somewhere into the program
+- Crashes or anything? to do with events and race conditions?

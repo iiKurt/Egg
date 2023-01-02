@@ -9,7 +9,7 @@ static Uint16 selectedFontWidth, selectedFontHeight;
 static SDL_Rect s_rect;
 static SDL_Rect d_rect;
 
-void BMPF_initalise(SDL_Texture* font)
+void BMPF_Initalise(SDL_Texture* font)
 {
 	Uint32 format;
 	int access;
@@ -27,12 +27,12 @@ void BMPF_initalise(SDL_Texture* font)
 	d_rect.h = s_rect.h;
 }
 
-void BMPF_kill(void) {
+void BMPF_Kill(void) {
 	SDL_DestroyTexture(selectedFont);
 	selectedFont = NULL;
 }
 
-void BMPF_setColorFromSDL(SDL_Renderer* renderer)
+void BMPF_SetColorFromSDL(SDL_Renderer* renderer)
 {
 	Uint8 r, g, b, a;
 	
@@ -40,7 +40,11 @@ void BMPF_setColorFromSDL(SDL_Renderer* renderer)
 	SDL_SetTextureColorMod(selectedFont, r, g, b);
 }
 
-void BMPF_setColor(Uint32 fore, Uint32 unused) /* Color must be in 0x00RRGGBB format! */
+void BMPF_SetColor(Uint8 r, Uint8 g, Uint8 b) {
+	SDL_SetTextureColorMod(selectedFont, r, g, b);
+}
+
+void BMPF_SetColor(Uint32 fore, Uint32 unused) /* Color must be in 0x00RRGGBB format! */
 {
 	// TODO: grab SDL renderer color instead of manually specifying?
 	SDL_Color pal[1];
@@ -52,8 +56,6 @@ void BMPF_setColor(Uint32 fore, Uint32 unused) /* Color must be in 0x00RRGGBB fo
 
 void BMPF_Print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, bool alignCenter)
 {
-	BMPF_setColorFromSDL(renderer);
-	
 	// Get screen size informations
 	int rendererHeight;
 	int rendererWidth;
@@ -148,9 +150,6 @@ void BMPF_Print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, boo
 				positionY += s_rect.h;
 			}
 		}
-		
-		// Get character ASCII code
-		int id = (int)str[i];
 		
 		// Ensure the character isn't a newline character
 		// And that it will actually be drawn on screen

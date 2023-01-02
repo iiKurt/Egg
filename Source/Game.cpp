@@ -1,40 +1,92 @@
 #include "Game.hpp"
 
-#include <ctime>
+#include <map>     // Map
+#include <ctime>   // Time
+#include <cstdlib> // Random
 
-static bool TutorialTextActive = false;
-static bool GameComplete = false;
-static int AcknowledgementCount = 0;
+Game_State state;
+std::map<int, const char*> eggEggTexts = {
+	{ 0, "" },
+	{ 3, "You won!" },
+	{ 4, "Yep..."},
+	{ 5, "You sure did."},
+	{ 6, "Would you like a trophy?"},
+	{ 7, "Sorry, we're all out of stock."},
+	{ 9, "Could you please stop pressing [Space]?"},
+	{ 10, "ZZZzzzzZZZzzZZZzzZzz"},
+	{ 11, "zzzZZZZzzzZZzzzZZzZZ"},
+	{ 13, "Agh! I'm trying to sleep here..." },
+	{ 15, "Go away please!" },
+	{ 20, "I don't have anything of value here..." },
+	{ 30, "I am impressed by your persistence." },
+	{ 50, "Ok this is it, or is it?" },
+	{ 100, "Do you really have nothing better to do?" },
+	{ 500, "This must be getting old..." },
+	{ 1000, "R.I.P. keyboard." },
+	{ 2002, "Ayy" },
+	{ 5000, "I don't have anything for you."},
+	{ 10000, "Fine: 🏆"}, // 🏆
+	{ 10001, "Yeah this isn't a unicode font... ain't no trophies here."},
+	{ 10002, "Only corruption."},
+	{ 10004, "~\\_(^_^)_/~"}
+};
+int lastAcknowledgement = 0;
 
 int map(int x, int in_min, int in_max, int out_min, int out_max);
 
 void Game_Initalise() {
 	srand((unsigned)time(0));
-
+	
 	// Populate top row of numbers
 	for (short i = 0; i < GameArrayLength; i++) {
-		GameArray[0][i] = rand() % 16;
+		state.Array[0][i] = rand() % 16;
 	}
 }
 
-void Game_Submit() {
-	TutorialTextActive = false;
+Game_State* Game_GetState() {
+	return &state;
+}
 
-	if (GameComplete) {
-		AcknowledgementCount++;
-		return;
+bool Game_Submit() {
+	state.Tutorial = false;
+
+	// Game already complete
+	if (state.Complete) {
+		state.Acknowledgements++;
+		return false;
 	}
 
-	if (GameArray[1][GameCurrentIndex] == GameArray[0][GameCurrentIndex]) {
-		if (GameCurrentIndex - 1 < 0) { // End of the row, game complete
-			GameComplete = true;
+	if (state.Array[1][state.CurrentIndex] == state.Array[0][state.CurrentIndex]) {
+		if (state.CurrentIndex - 1 < 0) { // End of the row, game complete
+			state.Complete = true;
+			return false;
 		}
-		else {
-			GameCurrentIndex--;
+		else { // Correct, move forward
+			state.CurrentIndex--;
+			return false;
 		}
 	}
-	else if (GameCurrentIndex < StartIndex) { // Pressed at wrong time
-		GameCurrentIndex++; // Go back
+	else { // Pressed at wrong time
+		// Only go back if not already at the starting point
+		if (state.CurrentIndex < StartIndex) {
+			state.CurrentIndex++; // Go back
+			return true;
+		}
+		return false;
+	}
+}
+
+void Game_Update() {
+	state.Array[1][state.CurrentIndex] = rand() % 16;
+}
+
+const char* Game_GetEggText() {
+	if (eggEggTexts.count(state.Acknowledgements) == 1) { // Item exists
+		lastAcknowledgement = state.Acknowledgements;
+		return eggEggTexts[state.Acknowledgements];
+	}
+	else {
+		return eggEggTexts[lastAcknowledgement];
 	}
 }
 
@@ -43,9 +95,9 @@ char Game_GetHexCharacter(int n) {
 	return (n > 9) ? (n - 10) + 'A' : n + '0';
 }
 
-int CalculateDelay() {
+int Game_CalculateTime() {
 	//return map(CurrentIndex, 0, StartIndex, 500, 1500); // Hard mode
-	return map(GameCurrentIndex, 0, StartIndex, 1500, 500); // EZ mode
+	return map(state.CurrentIndex, 0, StartIndex, 1500, 500); // EZ mode
 }
 
 int map(int x, int in_min, int in_max, int out_min, int out_max) {
