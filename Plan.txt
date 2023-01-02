@@ -7,3 +7,4 @@ TODOs:
 	- and with Classic SDL version, green text when completed etc
 - Incorporate EggMac somewhere into the program
 - Crashes or anything? to do with events and race conditions?
+- Randomness curves

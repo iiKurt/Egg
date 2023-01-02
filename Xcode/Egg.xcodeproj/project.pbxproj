@@ -12,7 +12,7 @@
 		451A72D22961405F002244C0 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC172961223D0031BFEB /* SDL2.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		451A72D429614080002244C0 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; platformFilters = (macos, ); };
 		451A72D529614080002244C0 /* SDL2.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 450ACC152961223D0031BFEB /* SDL2.framework */; platformFilters = (macos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		451A72F329615510002244C0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451A72F229615510002244C0 /* Settings.bundle */; };
+		451A72F329615510002244C0 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 451A72F229615510002244C0 /* Settings.bundle */; platformFilter = ios; };
 		451A7303296238F9002244C0 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 451A7301296238F9002244C0 /* Game.cpp */; };
 		4549F7102960FF7B0035F270 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4549F70F2960FF7B0035F270 /* Assets.xcassets */; };
 		4549F7132960FF7B0035F270 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4549F7112960FF7B0035F270 /* LaunchScreen.storyboard */; platformFilter = ios; };

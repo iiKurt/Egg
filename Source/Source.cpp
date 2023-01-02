@@ -269,10 +269,11 @@ void render() {
 			}
 
 			BMPF_Print(renderer, Game_GetHexCharacter(gameState->Array[j][i]), x, y);
-		}
-
-		if (gameState->CurrentIndex == i) {
-			SDL_RenderDrawLine(renderer, x, y + 14, x + 7, y + 14);
+			
+			// Underline current character, only on the second row
+			if (gameState->CurrentIndex == i && j == 1) {
+				SDL_RenderDrawLine(renderer, x, y + 14, x + 7, y + 14);
+			}
 		}
 	}
 	
