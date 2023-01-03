@@ -183,7 +183,6 @@ int main(int argc, char* argv[])
 			default:
 				break;
 		}
-		render();
 	}
 
 	return 0;
@@ -258,7 +257,7 @@ void render() {
 			// First number = offset
 			// Second number - 6 = padding between each char
 			// 10, 10
-			x = ((SCREEN_WIDTH / 2) - ((GameArrayLength / 2) * 10)) + (10 * i);
+			x = ((SCREEN_WIDTH / 2) - ((GameArrayLength / 2) * 10)) + (10 * i) + 1; // Adding +1 because characters have padding? (Needed, as is uncentered otherwise - too far left)
 			// 14, 16
 			y = ((SCREEN_HEIGHT / 2) - ((GameArrayHeight / 2) * -6)) + (16 * j);
 
