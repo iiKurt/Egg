@@ -1,7 +1,42 @@
-# Project specific ignores
+## Project specific ignores
 Build/
 Libraries/SDL2-devel-2.26.1-mingw/
 Egg.sublime-workspace
 
 ## Xcode User settings
 xcuserdata/
+
+## Android
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Log/OS Files
+*.log
+
+# Android Studio generated files and folders
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+output.json
+
+# IntelliJ
+*.iml
+.idea/
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
+
+# Keystore files
+*.jks
+*.keystore
+
+# Google Services (e.g. APIs or Firebase)
+google-services.json
+
+# Android Profiling
+*.hprof

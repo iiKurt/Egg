@@ -149,6 +149,13 @@ int main(int argc, char* argv[])
 			case SDL_FINGERDOWN:
 			case SDL_MOUSEBUTTONDOWN:
 			case SDL_KEYDOWN:
+				// Quit application when Android back button is pressed
+				if (event.key.keysym.sym == SDLK_AC_BACK) {
+					running = false;
+					break;
+				}
+				
+				// Ignore repeating keystrokes
 				if (event.key.repeat != 0) {
 					break;
 				}
