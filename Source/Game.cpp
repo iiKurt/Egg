@@ -12,7 +12,11 @@ std::map<int, const char*> eggEggTexts = {
 	{ 5, "You sure did."},
 	{ 6, "Would you like a trophy?"},
 	{ 7, "Sorry, we're all out of stock."},
-	{ 9, "Could you please stop pressing [Space]?"},
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
+	{ 9, "Could you please stop pressing keys?"},
+#else
+	{ 9, "Could you please stop tapping?"},
+#endif
 	{ 10, "ZZZzzzzZZZzzZZZzzZzz"},
 	{ 11, "zzzZZZZzzzZZzzzZZzZZ"},
 	{ 13, "Agh! I'm trying to sleep here..." },
@@ -22,10 +26,14 @@ std::map<int, const char*> eggEggTexts = {
 	{ 50, "Ok this is it, or is it?" },
 	{ 100, "Do you really have nothing better to do?" },
 	{ 500, "This must be getting old..." },
+#if defined(__IPHONEOS__) || defined(__ANDROID__)
 	{ 1000, "R.I.P. keyboard." },
+#else
+	{ 1000, "R.I.P. screen." },
+#endif
 	{ 2002, "Ayy" },
 	{ 5000, "I don't have anything for you."},
-	{ 10000, "Fine: 🏆"}, // 🏆
+	{ 10000, "Fine: \xA0"}, // 🏆
 	{ 10001, "Yeah this isn't a unicode font... ain't no trophies here."},
 	{ 10002, "Only corruption."},
 	{ 10004, "~\\_(^_^)_/~"}
@@ -77,7 +85,13 @@ bool Game_Submit() {
 }
 
 void Game_Update() {
-	state.Array[1][state.CurrentIndex] = rand() % 16;
+	// 1 in 5 chance (technically slightly more) to have the correct answer inserted
+	if (rand() % 5 == 0) {
+		state.Array[1][state.CurrentIndex] = state.Array[0][state.CurrentIndex];
+	}
+	else {
+		state.Array[1][state.CurrentIndex] = rand() % 16;
+	}
 }
 
 const char* Game_GetEggText() {

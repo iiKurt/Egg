@@ -6,7 +6,7 @@ const int StartIndex = GameArrayLength - 1;
 #if defined(__IPHONEOS__) || defined(__ANDROID__)
 const char* const TutorialText = "Tap anywhere to confirm current character...";
 #else
-const char* const TutorialText = "Press any key to confirm current character...";
+const char* const TutorialText = "Press any key to confirm current character...\xA0";
 #endif
 
 struct Game_State {

@@ -9,7 +9,7 @@ CXX				:= x86_64-w64-mingw32-g++
 SDL2DIR			:= $(LIBRARIESDIR)/SDL2-devel-2.26.1-mingw/x86_64-w64-mingw32
 
 # Extend the makefile.variables
-CXXFLAGS		+= -I $(SDL2DIR)/include/SDL2
+CXXFLAGS		+= -I $(SDL2DIR)/include/SDL2 -O3
 # I would run $(SDL2DIR)/sdl2-config --static-libs in here but it prints flags for the current system (macOS atm) and not the target system (Windows)
 # The second line is what it would output on Windows (https://stackoverflow.com/a/61572482)
 LDFLAGS			+= -L $(SDL2DIR)/lib -static -static-libgcc -static-libstdc++ -lpthread \

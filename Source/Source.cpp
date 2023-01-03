@@ -20,40 +20,38 @@ SDL_Texture* sadMac;
 
 // Game state
 Game_State* gameState;
-SDL_TimerID ticker;
+SDL_TimerID timer;
 
 // Function prototypes
-Uint32 tickerCallback(Uint32 interval, void* param);
+void setScreenSize();
+bool initalise();
+Uint32 timerCallback(Uint32 interval, void* param);
 void update();
 void render();
 void quit();
 
-int main(int argc, char* argv[]) // int argc, char* args[]
-{
-	// Unused
-	(void)argc;
-	(void)argv;
+void setScreenSize() {
+	// Related: https://discourse.libsdl.org/t/high-dpi-mode/34411/2
+	// Display scaling for high dpi displays
+	
+	// Scaled window size (a high dpi will report this as a smaller number than its screen)
+	SDL_GetWindowSize(window, &SCREEN_WIDTH, &SCREEN_HEIGHT);
+	SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
+}
 
-	// Initialize SDL
+bool initalise() {
+	// Initialise SDL
 	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER) < 0)
 	{
 		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 	}
 	else
 	{
-		#if defined(__IPHONEOS__) || defined(__ANDROID__)
-		SDL_DisplayMode dm;
-		SDL_GetCurrentDisplayMode(0, &dm);
-		
-		SCREEN_HEIGHT = dm.h;
-		SCREEN_WIDTH = dm.w;
-		#endif
-		
 		// Create window
 		window = SDL_CreateWindow("Egg", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT,
-			SDL_WINDOW_SHOWN |
-			SDL_WINDOW_RESIZABLE |
-			SDL_WINDOW_ALLOW_HIGHDPI);
+		                          SDL_WINDOW_SHOWN |
+		                          SDL_WINDOW_RESIZABLE |
+		                          SDL_WINDOW_ALLOW_HIGHDPI);
 		
 		if (window == NULL)
 		{
@@ -63,52 +61,28 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 		{
 			// Define window behaviour
 			SDL_SetWindowMinimumSize(window, 410, 240); // 100, 70
-			// Add some event watchers
-			//SDL_AddEventWatch(resizeEventWatcher, window);
-
+			
 			// Create a hardware accelerated renderer
 			renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
+			
+			setScreenSize();
 			
 //			if (renderer == NULL) {
 //				// Error creating renderer, try a software one instead
 //				renderer = SDL_CreateSoftwareRenderer(SDL_GetWindowSurface(window));
 //				// SDL_UpdateWindowSurface(window); is needed to draw, rather than SDL_RenderPresent();
-				
-				// Still an error? Give up
-				if (renderer == NULL) {
-					SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Renderer could not be created. SDL Error: %s", SDL_GetError());
-					SDL_ShowSimpleMessageBox(
-						SDL_MESSAGEBOX_ERROR,
-						"Renderer error",
-						"Renderer could not be created.",
-						window);
-					quit();
-					return -1;
-				}
-//			}
 			
-			// https://discourse.libsdl.org/t/high-dpi-mode/34411/2
-			int rendererWidth = 0, rendererHeight = 0;
-			SDL_GetRendererOutputSize(renderer, &rendererWidth, &rendererHeight);
-			
-			if (rendererWidth != SCREEN_WIDTH) {
-				float widthScale = (float)rendererWidth / (float) SCREEN_WIDTH;
-				float heightScale = (float)rendererHeight / (float) SCREEN_HEIGHT;
-
-				if (widthScale != heightScale) {
-					fprintf(stderr, "WARNING: width scale != height scale\n");
-				}
-				
-				//#if defined(__IPHONEOS__) || defined(__ANDROID__)
-				//SDL_RenderSetScale(renderer, widthScale * 2, heightScale * 2);
-				//SCREEN_HEIGHT /= 2;
-				//SCREEN_WIDTH /= 2;
-				//#else
-				SDL_RenderSetScale(renderer, widthScale, heightScale);
-				//#endif
+			// Still an error? Give up
+			if (renderer == NULL) {
+				SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Renderer could not be created. SDL Error: %s", SDL_GetError());
+				SDL_ShowSimpleMessageBox(
+				                         SDL_MESSAGEBOX_ERROR,
+				                         "Renderer error",
+				                         "Renderer could not be created.",
+				                         window);
+				return false;
 			}
-
-			SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Successfully loaded"); // Shorthand: SDL_Log("whatever");
+//			}
 		}
 	}
 	
@@ -121,21 +95,39 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 		sadMac == NULL)
 	{
 		// Unable to load as a BMP
-		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "File load error: %s", SDL_GetError());
+		SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Resource load error: %s", SDL_GetError());
 		SDL_ShowSimpleMessageBox(
-			SDL_MESSAGEBOX_ERROR,
-			"File load error",
-			"Unable to load file.",
-			window);
-		quit();
-		return -1;
+		                         SDL_MESSAGEBOX_ERROR,
+		                         "Resource load error",
+		                         "Unable to load Resource.",
+		                         window);
+		return false;
 	}
 	BMPF_Initalise(bmpTexture); // Use bitmap font
+	
+	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Successfully loaded"); // Shorthand: SDL_Log("whatever");
 	
 	Game_Initalise();
 	gameState = Game_GetState();
 	
-	ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+	timer = SDL_AddTimer(Game_CalculateTime(), timerCallback, NULL);
+	
+	return true;
+}
+	
+int main(int argc, char* argv[])
+{
+	// Unused
+	(void)argc;
+	(void)argv;
+
+	// Initalisation failed
+	if (!initalise()) {
+		// Quit program
+		quit();
+		return -1;
+	}
+	
 	// Render now so we don't have to wait for any events
 	render();
 	
@@ -155,31 +147,23 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 				}
 				
 				if (Game_Submit()) {
-					SDL_RemoveTimer(ticker);
+					SDL_RemoveTimer(timer);
 					update();
 					render();
-					ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+					timer = SDL_AddTimer(Game_CalculateTime(), timerCallback, NULL);
 				}
 				else {
 					render();
 				}
 				break;
 			case SDL_WINDOWEVENT:
-				if (event.window.event == SDL_WINDOWEVENT_SIZE_CHANGED) {
-					// Update screen size variables when window size has changed
-					
-					#if defined(__IPHONEOS__) || defined(__ANDROID__)
-					SDL_DisplayMode dm;
-					SDL_GetCurrentDisplayMode(0, &dm);
-					
-					SCREEN_HEIGHT = dm.h;
-					SCREEN_WIDTH = dm.w;
-					#else
-					SDL_GetRendererOutputSize(renderer, &SCREEN_WIDTH, &SCREEN_HEIGHT);
-					#endif
-					
-					render();
+				if (event.window.event != SDL_WINDOWEVENT_SIZE_CHANGED) {
+					break;
 				}
+			case SDL_DISPLAYEVENT_ORIENTATION:
+				// Update screen size variables when window size has changed or display has been rotated
+				setScreenSize();
+				render();
 				break;
 				
 			default:
@@ -190,13 +174,13 @@ int main(int argc, char* argv[]) // int argc, char* args[]
 	return 0;
 }
 
-Uint32 tickerCallback(Uint32 interval, void* param) {
+Uint32 timerCallback(Uint32 interval, void* param) {
 	// Unused
 	(void)interval;
 	(void)param;
 	
-	SDL_RemoveTimer(ticker);
-	ticker = SDL_AddTimer(Game_CalculateTime(), tickerCallback, NULL);
+	SDL_RemoveTimer(timer);
+	timer = SDL_AddTimer(Game_CalculateTime(), timerCallback, NULL);
 	
 	update();
 	render();
@@ -204,9 +188,12 @@ Uint32 tickerCallback(Uint32 interval, void* param) {
 }
 
 void update() {
-	Game_Update();
+	// Stop updating the game and its random numbers if complete
 	if (gameState->Complete) {
-		SDL_RemoveTimer(ticker);
+		SDL_RemoveTimer(timer);
+	}
+	else {
+		Game_Update();
 	}
 }
 
@@ -271,7 +258,7 @@ void render() {
 			BMPF_Print(renderer, Game_GetHexCharacter(gameState->Array[j][i]), x, y);
 			
 			// Underline current character, only on the second row
-			if (gameState->CurrentIndex == i && j == 1) {
+			if (gameState->CurrentIndex == i && j == 1 && !gameState->Complete) {
 				SDL_RenderDrawLine(renderer, x, y + 14, x + 7, y + 14);
 			}
 		}

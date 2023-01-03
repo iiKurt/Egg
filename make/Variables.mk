@@ -26,4 +26,5 @@ LDFLAGS			:=
 OBJECTS			:= \
 	Source.o \
 	LoadTexture.o \
+	Game.o \
 	BMPF.o

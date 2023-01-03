@@ -162,7 +162,7 @@ void BMPF_Print(SDL_Renderer* renderer, const char* str, Uint32 x, Uint32 y, boo
 	}
 }
 
-void BMPF_Print(SDL_Renderer* renderer, char character, Uint32 x, Uint32 y) {
+void BMPF_Print(SDL_Renderer* renderer, unsigned char character, Uint32 x, Uint32 y) {
 	d_rect.x = x;
 	d_rect.y = y;
 	

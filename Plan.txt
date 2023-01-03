@@ -1,10 +1,13 @@
 TODOs:
+
+More important:
+- Version parity with watch edition, easter egg text color, some strings, acknowledgement counter, timing
+	- and with Classic SDL version, green text when completed etc
+- Incorporate EggMac somewhere into the program
+- Crashes or anything? to do with events and race conditions?
+
+Meh:
 - Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining different info files
 - Other TODOs in the code
 - Sync up BMPF with repo
 - Figure out what can/should be written in C vs C++
-- Version parity with watch edition, easter egg text color, some strings, acknowledgement counter
-	- and with Classic SDL version, green text when completed etc
-- Incorporate EggMac somewhere into the program
-- Crashes or anything? to do with events and race conditions?
-- Randomness curves
