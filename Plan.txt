@@ -5,6 +5,7 @@ More important:
 	- and with Classic SDL version, green text when completed etc
 - Incorporate EggMac somewhere into the program
 - Crashes or anything? to do with events and race conditions?
+- Use letterboxing and logical sizes (or just detect window size on resize) to make 1 pixel equal 4 (or 8, 16 etc) when the window size is big enough
 
 Meh:
 - Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining different info files

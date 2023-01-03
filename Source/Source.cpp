@@ -36,6 +36,13 @@ void setScreenSize() {
 	
 	// Scaled window size (a high dpi will report this as a smaller number than its screen)
 	SDL_GetWindowSize(window, &SCREEN_WIDTH, &SCREEN_HEIGHT);
+	// Except for Android :/
+	#if defined(__ANDROID__)
+	// We are assuming all Android devices have a high-dpi display by doing this
+	// There seems to be no other way to detect a scale factor, so we assume 2
+	SCREEN_WIDTH /= 2;
+	SCREEN_HEIGHT /= 2;
+	#endif
 	SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
@@ -60,7 +67,7 @@ bool initalise() {
 		else // Window creation successful
 		{
 			// Define window behaviour
-			SDL_SetWindowMinimumSize(window, 410, 240); // 100, 70
+			SDL_SetWindowMinimumSize(window, SCREEN_WIDTH, SCREEN_HEIGHT);
 			
 			// Create a hardware accelerated renderer
 			renderer = SDL_CreateRenderer(window, 0, SDL_RENDERER_ACCELERATED);
@@ -99,7 +106,7 @@ bool initalise() {
 		SDL_ShowSimpleMessageBox(
 		                         SDL_MESSAGEBOX_ERROR,
 		                         "Resource load error",
-		                         "Unable to load Resource.",
+		                         "Unable to load resource.",
 		                         window);
 		return false;
 	}
@@ -169,6 +176,7 @@ int main(int argc, char* argv[])
 			default:
 				break;
 		}
+		render();
 	}
 
 	return 0;
