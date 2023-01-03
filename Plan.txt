@@ -6,6 +6,10 @@ More important:
 - Incorporate EggMac somewhere into the program
 - Crashes or anything? to do with events and race conditions?
 - Use letterboxing and logical sizes (or just detect window size on resize) to make 1 pixel equal 4 (or 8, 16 etc) when the window size is big enough
+- Android
+	- Display copyright information and website link somewhere (https://gist.github.com/tzmartin/61ca361070409fdb8153, https://developer.android.com/develop/ui/views/components/settings#java)?
+	- Doesn't seem to render unless touch event occurs?
+	- Move version information away from /AndroidStudio to /Bundled
 
 Meh:
 - Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining different info files
