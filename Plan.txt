@@ -1,7 +1,7 @@
 TODOs:
 
 More important:
-- Use letterboxing and logical sizes (or just detect window size on resize) to make 1 pixel equal 4 (or 8, 16 etc) when the window size is big enough
+- Use letterboxing and logical sizes (or just detect window size on resize) to make 1 pixel equal 3, 4, 5 etc when the window size is big enough
 - Tune difficulty timings
 	- Perhaps have a mode where it cycles through numbers, rather than it being random?
 - Version parity with watch edition, easter egg text color, some strings, acknowledgement counter, timing
@@ -11,8 +11,10 @@ More important:
 	- Doesn't seem to render unless touch event occurs?
 	- Move version information away from /AndroidStudio to /Bundled
 - Crashes or anything? to do with events and race conditions?
+- Redo icons with x3 scalings
 
 Meh:
+- GitHub actions! Use artifacts as files for releases
 - Incorporate EggMac somewhere into the program
 - Have things such as copyright stored in a generic info file that can be added to info.plist or exe properties, rather than maintaining different info files
 - Other TODOs in the code
