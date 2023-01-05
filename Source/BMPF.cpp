@@ -9,7 +9,7 @@ static Uint16 selectedFontWidth, selectedFontHeight;
 static SDL_Rect s_rect;
 static SDL_Rect d_rect;
 
-void BMPF_Initalise(SDL_Texture* font)
+void BMPF_Initialise(SDL_Texture* font)
 {
 	Uint32 format;
 	int access;

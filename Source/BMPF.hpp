@@ -2,7 +2,7 @@
 
 #include <SDL.h>
 
-void BMPF_Initalise(SDL_Texture* font);
+void BMPF_Initialise(SDL_Texture* font);
 void BMPF_Kill(void);
 void BMPF_SetColorFromSDL(SDL_Renderer* renderer);
 void BMPF_SetColor(Uint8 r, Uint8 g, Uint8 b);

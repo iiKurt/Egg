@@ -42,7 +42,7 @@ int lastAcknowledgement = 0;
 
 int map(int x, int in_min, int in_max, int out_min, int out_max);
 
-void Game_Initalise() {
+void Game_Initialise() {
 	srand((unsigned)time(0));
 	
 	// Populate top row of numbers

@@ -24,7 +24,7 @@ SDL_TimerID timer;
 
 // Function prototypes
 void setScreenSize();
-bool initalise();
+bool initialise();
 Uint32 timerCallback(Uint32 interval, void* param);
 void update();
 void render();
@@ -46,7 +46,7 @@ void setScreenSize() {
 	SDL_RenderSetLogicalSize(renderer, SCREEN_WIDTH, SCREEN_HEIGHT);
 }
 
-bool initalise() {
+bool initialise() {
 	// Initialise SDL
 	if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_TIMER) < 0)
 	{
@@ -110,11 +110,11 @@ bool initalise() {
 		                         window);
 		return false;
 	}
-	BMPF_Initalise(bmpTexture); // Use bitmap font
+	BMPF_Initialise(bmpTexture); // Use bitmap font
 	
 	SDL_LogInfo(SDL_LOG_CATEGORY_APPLICATION, "Successfully loaded"); // Shorthand: SDL_Log("whatever");
 	
-	Game_Initalise();
+	Game_Initialise();
 	gameState = Game_GetState();
 	
 	timer = SDL_AddTimer(Game_CalculateTime(), timerCallback, NULL);
@@ -129,7 +129,7 @@ int main(int argc, char* argv[])
 	(void)argv;
 
 	// Initalisation failed
-	if (!initalise()) {
+	if (!initialise()) {
 		// Quit program
 		quit();
 		return -1;

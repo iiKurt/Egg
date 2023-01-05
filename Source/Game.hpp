@@ -17,7 +17,7 @@ struct Game_State {
 	int Acknowledgements = 0;
 };
 
-void Game_Initalise();
+void Game_Initialise();
 Game_State* Game_GetState();
 bool Game_Submit();
 void Game_Update();
