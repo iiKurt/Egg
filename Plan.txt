@@ -10,7 +10,8 @@ More important:
 	- Display copyright information and website link somewhere (https://gist.github.com/tzmartin/61ca361070409fdb8153, https://developer.android.com/develop/ui/views/components/settings#java)?
 	- Doesn't seem to render unless touch event occurs?
 	- Move version information away from /AndroidStudio to /Bundled
-	- Icons too small on homescreen
+	- Icon too small on homescreen
+	- Remove vibration permission as we don't use it
 	- Can't easily update the android version when SDL updates... have to re-copy Java files from sample android SDL project
 - Crashes or anything? to do with events and race conditions?
 - Redo icons with x3 scalings
