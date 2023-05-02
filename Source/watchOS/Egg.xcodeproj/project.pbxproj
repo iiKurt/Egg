@@ -11,7 +11,7 @@
 		45D004532A00B4E900F0FB99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004522A00B4E900F0FB99 /* ContentView.swift */; };
 		45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004542A00B4EA00F0FB99 /* Assets.xcassets */; };
 		45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */; };
-		45D0045F2A00B5DF00F0FB99 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45D0045E2A00B5DF00F0FB99 /* Settings-Watch.bundle */; };
+		45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,7 +20,7 @@
 		45D004522A00B4E900F0FB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45D004542A00B4EA00F0FB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		45D0045E2A00B5DF00F0FB99 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
+		45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +53,7 @@
 		45D0044F2A00B4E900F0FB99 /* Egg Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				45D0045E2A00B5DF00F0FB99 /* Settings-Watch.bundle */,
+				45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */,
 				45D004502A00B4E900F0FB99 /* EggApp.swift */,
 				45D004522A00B4E900F0FB99 /* ContentView.swift */,
 				45D004542A00B4EA00F0FB99 /* Assets.xcassets */,
@@ -130,7 +130,7 @@
 			files = (
 				45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */,
 				45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */,
-				45D0045F2A00B5DF00F0FB99 /* Settings-Watch.bundle in Resources */,
+				45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
