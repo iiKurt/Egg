@@ -15,9 +15,9 @@
 		459916242A0B141C001B7143 /* zap_light16.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 459916222A0B141C001B7143 /* zap_light16.ttf */; };
 		45D004512A00B4E900F0FB99 /* EggApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004502A00B4E900F0FB99 /* EggApp.swift */; };
 		45D004532A00B4E900F0FB99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004522A00B4E900F0FB99 /* ContentView.swift */; };
-		45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004542A00B4EA00F0FB99 /* Assets.xcassets */; };
 		45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */; };
 		45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */; };
+		45F2AC302A0B634A006A9FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459916182A0B12C2001B7143 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,6 @@
 		45D0044D2A00B4E900F0FB99 /* Egg Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D004502A00B4E900F0FB99 /* EggApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggApp.swift; sourceTree = "<group>"; };
 		45D004522A00B4E900F0FB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		45D004542A00B4EA00F0FB99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +61,6 @@
 				459916252A0B143C001B7143 /* Info.plist */,
 				459916142A0B12BF001B7143 /* EggApp.swift */,
 				459916162A0B12BF001B7143 /* ContentView.swift */,
-				459916182A0B12C2001B7143 /* Assets.xcassets */,
 				4599161A2A0B12C2001B7143 /* Egg.entitlements */,
 				4599161B2A0B12C2001B7143 /* Preview Content */,
 			);
@@ -80,6 +78,7 @@
 		459916212A0B13D7001B7143 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				459916182A0B12C2001B7143 /* Assets.xcassets */,
 				459916222A0B141C001B7143 /* zap_light16.ttf */,
 			);
 			path = Shared;
@@ -111,7 +110,6 @@
 				45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */,
 				45D004502A00B4E900F0FB99 /* EggApp.swift */,
 				45D004522A00B4E900F0FB99 /* ContentView.swift */,
-				45D004542A00B4EA00F0FB99 /* Assets.xcassets */,
 				45D004562A00B4EA00F0FB99 /* Preview Content */,
 			);
 			path = "Egg Watch App";
@@ -216,7 +214,7 @@
 			files = (
 				459916232A0B141C001B7143 /* zap_light16.ttf in Resources */,
 				45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */,
-				45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */,
+				45F2AC302A0B634A006A9FD5 /* Assets.xcassets in Resources */,
 				45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
