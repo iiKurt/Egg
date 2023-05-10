@@ -16,6 +16,7 @@
 		45D004512A00B4E900F0FB99 /* EggApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004502A00B4E900F0FB99 /* EggApp.swift */; };
 		45D004532A00B4E900F0FB99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004522A00B4E900F0FB99 /* ContentView.swift */; };
 		45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */; };
+		45E3596A2A0B6C3F00FDFC1C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45E359692A0B6C3F00FDFC1C /* Settings.bundle */; };
 		45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */; };
 		45F2AC302A0B634A006A9FD5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459916182A0B12C2001B7143 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -34,6 +35,7 @@
 		45D004502A00B4E900F0FB99 /* EggApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggApp.swift; sourceTree = "<group>"; };
 		45D004522A00B4E900F0FB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		45D004572A00B4EA00F0FB99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		45E359692A0B6C3F00FDFC1C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = "Settings-Watch.bundle"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				459916252A0B143C001B7143 /* Info.plist */,
+				45E359692A0B6C3F00FDFC1C /* Settings.bundle */,
 				459916142A0B12BF001B7143 /* EggApp.swift */,
 				459916162A0B12BF001B7143 /* ContentView.swift */,
 				4599161A2A0B12C2001B7143 /* Egg.entitlements */,
@@ -202,6 +205,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E3596A2A0B6C3F00FDFC1C /* Settings.bundle in Resources */,
 				459916242A0B141C001B7143 /* zap_light16.ttf in Resources */,
 				4599161D2A0B12C2001B7143 /* Preview Assets.xcassets in Resources */,
 				459916192A0B12C2001B7143 /* Assets.xcassets in Resources */,
