@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		459916152A0B12BF001B7143 /* EggApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459916142A0B12BF001B7143 /* EggApp.swift */; };
+		459916172A0B12BF001B7143 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 459916162A0B12BF001B7143 /* ContentView.swift */; };
+		459916192A0B12C2001B7143 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 459916182A0B12C2001B7143 /* Assets.xcassets */; };
+		4599161D2A0B12C2001B7143 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4599161C2A0B12C2001B7143 /* Preview Assets.xcassets */; };
+		459916232A0B141C001B7143 /* zap_light16.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 459916222A0B141C001B7143 /* zap_light16.ttf */; };
+		459916242A0B141C001B7143 /* zap_light16.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 459916222A0B141C001B7143 /* zap_light16.ttf */; };
 		45D004512A00B4E900F0FB99 /* EggApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004502A00B4E900F0FB99 /* EggApp.swift */; };
 		45D004532A00B4E900F0FB99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D004522A00B4E900F0FB99 /* ContentView.swift */; };
 		45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45D004542A00B4EA00F0FB99 /* Assets.xcassets */; };
@@ -15,6 +21,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		459916122A0B12BE001B7143 /* Egg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Egg.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		459916142A0B12BF001B7143 /* EggApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggApp.swift; sourceTree = "<group>"; };
+		459916162A0B12BF001B7143 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		459916182A0B12C2001B7143 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4599161A2A0B12C2001B7143 /* Egg.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Egg.entitlements; sourceTree = "<group>"; };
+		4599161C2A0B12C2001B7143 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		459916222A0B141C001B7143 /* zap_light16.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = zap_light16.ttf; sourceTree = "<group>"; };
+		459916252A0B143C001B7143 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		459916262A0B166C001B7143 /* Egg-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Egg-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
 		45D0044D2A00B4E900F0FB99 /* Egg Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Egg Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45D004502A00B4E900F0FB99 /* EggApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggApp.swift; sourceTree = "<group>"; };
 		45D004522A00B4E900F0FB99 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -24,6 +39,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4599160F2A0B12BE001B7143 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45D0044A2A00B4E900F0FB99 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -34,10 +56,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		459916132A0B12BF001B7143 /* Egg */ = {
+			isa = PBXGroup;
+			children = (
+				459916252A0B143C001B7143 /* Info.plist */,
+				459916142A0B12BF001B7143 /* EggApp.swift */,
+				459916162A0B12BF001B7143 /* ContentView.swift */,
+				459916182A0B12C2001B7143 /* Assets.xcassets */,
+				4599161A2A0B12C2001B7143 /* Egg.entitlements */,
+				4599161B2A0B12C2001B7143 /* Preview Content */,
+			);
+			path = Egg;
+			sourceTree = "<group>";
+		};
+		4599161B2A0B12C2001B7143 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4599161C2A0B12C2001B7143 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		459916212A0B13D7001B7143 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				459916222A0B141C001B7143 /* zap_light16.ttf */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		45D004442A00B4E800F0FB99 = {
 			isa = PBXGroup;
 			children = (
+				459916132A0B12BF001B7143 /* Egg */,
 				45D0044F2A00B4E900F0FB99 /* Egg Watch App */,
+				459916212A0B13D7001B7143 /* Shared */,
 				45D0044E2A00B4E900F0FB99 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				45D0044D2A00B4E900F0FB99 /* Egg Watch App.app */,
+				459916122A0B12BE001B7143 /* Egg.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -53,6 +107,7 @@
 		45D0044F2A00B4E900F0FB99 /* Egg Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				459916262A0B166C001B7143 /* Egg-Watch-App-Info.plist */,
 				45ECFFF32A00CAA50077FF23 /* Settings-Watch.bundle */,
 				45D004502A00B4E900F0FB99 /* EggApp.swift */,
 				45D004522A00B4E900F0FB99 /* ContentView.swift */,
@@ -73,6 +128,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		459916112A0B12BE001B7143 /* Egg */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 459916202A0B12C2001B7143 /* Build configuration list for PBXNativeTarget "Egg" */;
+			buildPhases = (
+				4599160E2A0B12BE001B7143 /* Sources */,
+				4599160F2A0B12BE001B7143 /* Frameworks */,
+				459916102A0B12BE001B7143 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Egg;
+			productName = Egg;
+			productReference = 459916122A0B12BE001B7143 /* Egg.app */;
+			productType = "com.apple.product-type.application";
+		};
 		45D0044C2A00B4E900F0FB99 /* Egg Watch App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 45D0045B2A00B4EA00F0FB99 /* Build configuration list for PBXNativeTarget "Egg Watch App" */;
@@ -100,6 +172,9 @@
 				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					459916112A0B12BE001B7143 = {
+						CreatedOnToolsVersion = 14.2;
+					};
 					45D0044C2A00B4E900F0FB99 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -119,15 +194,27 @@
 			projectRoot = "";
 			targets = (
 				45D0044C2A00B4E900F0FB99 /* Egg Watch App */,
+				459916112A0B12BE001B7143 /* Egg */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		459916102A0B12BE001B7143 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459916242A0B141C001B7143 /* zap_light16.ttf in Resources */,
+				4599161D2A0B12C2001B7143 /* Preview Assets.xcassets in Resources */,
+				459916192A0B12C2001B7143 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45D0044B2A00B4E900F0FB99 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				459916232A0B141C001B7143 /* zap_light16.ttf in Resources */,
 				45D004582A00B4EA00F0FB99 /* Preview Assets.xcassets in Resources */,
 				45D004552A00B4EA00F0FB99 /* Assets.xcassets in Resources */,
 				45ECFFF42A00CAA50077FF23 /* Settings-Watch.bundle in Resources */,
@@ -137,6 +224,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4599160E2A0B12BE001B7143 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				459916172A0B12BF001B7143 /* ContentView.swift in Sources */,
+				459916152A0B12BF001B7143 /* EggApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		45D004492A00B4E900F0FB99 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -149,6 +245,84 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		4599161E2A0B12C2001B7143 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Egg/Egg.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Egg/Preview Content\"";
+				DEVELOPMENT_TEAM = NFW2U638MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Egg/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4599161F2A0B12C2001B7143 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Egg/Egg.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Egg/Preview Content\"";
+				DEVELOPMENT_TEAM = NFW2U638MT;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Egg/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kurtwink.Egg;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		45D004592A00B4EA00F0FB99 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -269,9 +443,11 @@
 				DEVELOPMENT_TEAM = NFW2U638MT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Egg-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Egg;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kurtwink.Egg;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -299,9 +475,11 @@
 				DEVELOPMENT_TEAM = NFW2U638MT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Egg-Watch-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Egg;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.kurtwink.Egg;
+				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -322,6 +500,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		459916202A0B12C2001B7143 /* Build configuration list for PBXNativeTarget "Egg" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4599161E2A0B12C2001B7143 /* Debug */,
+				4599161F2A0B12C2001B7143 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		45D004482A00B4E800F0FB99 /* Build configuration list for PBXProject "Egg" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

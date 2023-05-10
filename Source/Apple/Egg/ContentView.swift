@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  Egg Watch App
+//  Egg
 //
-//  Created by Kurt on 2/05/23.
+//  Created by Kurt on 10/05/23.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+			Text("Hello, world!").font(Font.custom("zap_light16", size: 16))
         }
         .padding()
     }
